@@ -49,7 +49,7 @@ export class App extends Component {
         </Section>
         <Section title="Statistics">
           <Statistics
-            state={this.state}
+            feedbakcs={this.state}
             total={this.countTotalFeedback()}
             positivePercentage={this.countPositiveFeedbackPercentage()}
           />

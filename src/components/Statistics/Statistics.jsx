@@ -2,13 +2,13 @@ import PropTypes from 'prop-types';
 import Notification from 'components/Notification';
 import css from 'components/Statistics/Statistics.module.css';
 
-const Statistics = ({ state, total, positivePercentage }) => {
+const Statistics = ({ feedbakcs, total, positivePercentage }) => {
   return total ? (
     <ul>
-      {Object.keys(state).map(el => (
+      {Object.keys(feedbakcs).map(el => (
         <li key={el}>
           <p className={css.rating}>
-            {el}: {state[el]}
+            {el}: {feedbakcs[el]}
           </p>
         </li>
       ))}
