@@ -5,9 +5,9 @@ import Section from './Section';
 
 export class App extends Component {
   state = {
-    Good: 0,
-    Neutral: 0,
-    Bad: 0,
+    good: 0,
+    neutral: 0,
+    bad: 0,
   };
 
   setRating = evt => {
@@ -26,10 +26,13 @@ export class App extends Component {
   };
 
   countPositiveFeedbackPercentage = () => {
-    return Math.ceil((100 / this.countTotalFeedback()) * this.state.Good) || 0;
+    return Math.ceil((100 / this.countTotalFeedback()) * this.state.good) || 0;
   };
 
   render() {
+    const { good, neutral, bad } = this.state;
+    const buttonsName = Object.keys(this.state);
+
     return (
       <div
         style={{
@@ -43,13 +46,15 @@ export class App extends Component {
       >
         <Section title={'Please leave feedback'}>
           <FeedbackOptions
-            options={this.state}
+            options={buttonsName}
             onLeaveFeedback={this.setRating}
           />
         </Section>
         <Section title="Statistics">
           <Statistics
-            feedbakcs={this.state}
+            good={good}
+            neutral={neutral}
+            bad={bad}
             total={this.countTotalFeedback()}
             positivePercentage={this.countPositiveFeedbackPercentage()}
           />

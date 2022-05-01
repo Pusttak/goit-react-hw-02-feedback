@@ -3,7 +3,7 @@ import css from 'components/FeedbackOptions/FeedbackOptions.module.css';
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => (
   <ul className={css.button__list}>
-    {Object.keys(options).map(el => (
+    {options.map(el => (
       <li key={el}>
         <button
           type="button"
@@ -11,7 +11,7 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => (
           className={css.button}
           onClick={onLeaveFeedback}
         >
-          {el}
+          {el[0].toUpperCase() + el.slice(1)}
         </button>
       </li>
     ))}
@@ -21,5 +21,5 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => (
 export default FeedbackOptions;
 
 FeedbackOptions.propTypes = {
-  options: PropTypes.object.isRequired,
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
