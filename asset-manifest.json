@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Pusttak/goit-react-hw-02-feedback/static/css/main.5234a991.css",
-    "main.js": "/Pusttak/goit-react-hw-02-feedback/static/js/main.a5fcf8ac.js",
+    "main.js": "/Pusttak/goit-react-hw-02-feedback/static/js/main.f15175dc.js",
     "index.html": "/Pusttak/goit-react-hw-02-feedback/index.html",
     "main.5234a991.css.map": "/Pusttak/goit-react-hw-02-feedback/static/css/main.5234a991.css.map",
-    "main.a5fcf8ac.js.map": "/Pusttak/goit-react-hw-02-feedback/static/js/main.a5fcf8ac.js.map"
+    "main.f15175dc.js.map": "/Pusttak/goit-react-hw-02-feedback/static/js/main.f15175dc.js.map"
   },
   "entrypoints": [
     "static/css/main.5234a991.css",
-    "static/js/main.a5fcf8ac.js"
+    "static/js/main.f15175dc.js"
   ]
 }
