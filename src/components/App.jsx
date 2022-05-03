@@ -18,20 +18,16 @@ export class App extends Component {
     });
   };
 
-  countTotalFeedback = () => {
-    return Object.values(this.state).reduce(
-      (acc, feedback) => acc + feedback,
-      0
-    );
-  };
-
-  countPositiveFeedbackPercentage = () => {
-    return Math.ceil((100 / this.countTotalFeedback()) * this.state.good) || 0;
-  };
-
   render() {
     const { good, neutral, bad } = this.state;
     const buttonsName = Object.keys(this.state);
+
+    const countTotalFeedback = Object.values(this.state).reduce(
+      (acc, feedback) => acc + feedback,
+      0
+    );
+    const countPositiveFeedbackPercentage =
+      Math.ceil((100 / countTotalFeedback) * good) || 0;
 
     return (
       <div
@@ -55,8 +51,8 @@ export class App extends Component {
             good={good}
             neutral={neutral}
             bad={bad}
-            total={this.countTotalFeedback()}
-            positivePercentage={this.countPositiveFeedbackPercentage()}
+            total={countTotalFeedback}
+            positivePercentage={countPositiveFeedbackPercentage}
           />
         </Section>
       </div>
