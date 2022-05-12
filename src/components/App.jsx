@@ -59,7 +59,6 @@ export class App extends Component {
             positivePercentage={this.countPositiveFeedbackPercentage()}
           />
         </Section>
-        this.countTotalFeedback()
       </div>
     );
   }
