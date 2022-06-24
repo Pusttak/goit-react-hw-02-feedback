@@ -10,9 +10,7 @@ export class App extends Component {
     bad: 0,
   };
 
-  setRating = evt => {
-    const { name } = evt.target;
-
+  setRating = name => {
     this.setState(prevState => {
       return { [name]: prevState[name] + 1 };
     });
@@ -44,7 +42,7 @@ export class App extends Component {
           color: '#010101',
         }}
       >
-        <Section title={'Please leave feedback'}>
+        <Section title="Please leave feedback">
           <FeedbackOptions
             options={buttonsName}
             onLeaveFeedback={this.setRating}
